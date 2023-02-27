@@ -45,10 +45,12 @@ describe("Приложение Greetings!", ()=> {
         const header = view.getByTestId('header');
         const submitButton = view.getByTestId('submit-btn');
 
+        const previosHeaderValue = header.textContent;
+
         fireEvent.change(input, { target: { value: '' } });
         fireEvent.click(submitButton);
 
-        expect(header.textContent).toBe(DEFAULT_HEADER);
+        expect(header.textContent).toBe(previosHeaderValue);
     });
 
 })

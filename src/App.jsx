@@ -12,13 +12,15 @@ function App() {
   }
 
   const handleSubmit = () => {
-    setheaderValue(inputValue);
-    setinputValue('');
+    if (inputValue !== "") {
+      setheaderValue(inputValue);
+      setinputValue("");
+    }
   }
 
   const handleReset = () => {
     setheaderValue(DEFAULT_HEADER);
-    setinputValue('');
+    setinputValue("");
   }
 
   return (
