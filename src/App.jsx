@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./app.css";
 
-const DEFAULT_HEADER = "Greetings!";
+export const DEFAULT_HEADER = "Greetings!";
 
 function App() {
   const [inputValue, setinputValue] = useState('');
@@ -23,10 +23,25 @@ function App() {
 
   return (
     <div className="app">
-      <h1>{headerValue}</h1>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <button onClick={handleSubmit}>Отправить</button>
-      <button onClick={handleReset}>Сбросить</button>
+      <h1 data-testid="header" >{headerValue}</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        data-testid="user-input"
+      />
+      <button
+        onClick={handleSubmit}
+        data-testid="submit-btn"
+      >
+        Отправить
+      </button>
+      <button
+        onClick={handleReset}
+        data-testid="reset-btn"
+      >
+        Сбросить
+      </button>
     </div>
   );
 }
